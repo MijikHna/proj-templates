@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  cpp:
+    build:
+      context: .
+    image: templates/cpp
+    container_name: cpp
+    restart: on-failure
+    security_opt:
+      - seccomp:unconfined
+    cap_add:
+      - SYS_PTRACE
+    ports:
+      - "9091:9091"
+      - "9092:9092"
+    volumes:
+      - ./source/src:/app/src
+      - ./source/include:/app/include
+      - ./source/test:/app/test
+      - ./source/lib:/app/lib
+      - ./source/CMakeLists.txt:/app/CMakeLists.txt
+      - ./source/Makefile:/app/Makefile
+    # tty: true
+    # command: /bin/bash
+    # command: 'gdbserver :9091 /app/build/CPP'
+    command: '/app/build/CPP'

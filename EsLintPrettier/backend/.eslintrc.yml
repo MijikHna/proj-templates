@@ -1,0 +1,16 @@
+env:
+  browser: true
+  es2021: true
+extends:
+  - standard-with-typescript
+  - airbnb-base
+  - plugin:prettier/recommended"
+overrides: []
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+rules:
+  no-console": on
+  no-unused-vars": on
+plugins:
+  - prettier

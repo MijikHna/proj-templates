@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  typescript:
+    build:
+      context: .
+    image: templates/typescript
+    container_name: typescript 
+    restart: on-failure
+    ports:
+      - "9229:9229"
+    volumes:
+      - ./source:/app
+    # tty: true
+    # command: '/bin/bash'
+    command: 'npm run start:debug'
