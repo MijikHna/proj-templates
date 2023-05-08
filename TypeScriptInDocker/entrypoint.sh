@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-cd /app
+cd /app || exit 1
 
 if [ ! -d ./node_modules ]; then
   npm install

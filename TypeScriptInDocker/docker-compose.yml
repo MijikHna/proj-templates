@@ -10,7 +10,7 @@ services:
     ports:
       - "9229:9229"
     volumes:
-      - ./source:/app
+      - .:/app
     # tty: true
     # command: '/bin/bash'
     command: 'npm run start:debug'

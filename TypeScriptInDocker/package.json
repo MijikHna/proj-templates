@@ -1,0 +1,15 @@
+{
+   "name": "js-docker-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc && node /build/main.js",
+    "start:debug": "tsc -p . && node --inspect=0.0.0.0:9229 ./build/main.js ",
+    "test": "jest ./test"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}

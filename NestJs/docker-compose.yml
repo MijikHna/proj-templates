@@ -1,0 +1,19 @@
+#this is docker-compose.yml file
+#create docker-compose service "nest-js", image and container name should be the same
+#exposes port 3000
+#mounts current location to "/app"
+#runs command "nest run start:debug"
+version: '3.7'
+services:
+  nest-js:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: nest-js
+    container_name: nest-js
+    ports:
+      - 3000:3000
+      - 9229:9229
+    volumes:
+      - ./:/app
+    command: npm run start:debug

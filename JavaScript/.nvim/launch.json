@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch App",
+      "program": "main.js",
+      "cwd": "${workspaceFolder}",
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch Jest",
+      "cmd": "${workspaceFolder}/node_modules/.bin/jest",
+      "program": "${workspaceFolder}/node_modules/.bin/jest",
+      "args": ["--runTestsByPath", "${relativeFile}"],
+      "env": {
+        "NODE_OPTIONS": "--experimental-vm-modules"
+      },
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen",
+
+      "disableOptimisticBPs": true,
+      "windows": {
+        "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+      }
+    }
+  ]
+}

@@ -5,7 +5,7 @@ include(CTest)
 enable_testing()
 
 add_executable(
-  CPP src/main.cpp 
+  CPP main.cpp 
   src/Figure.cpp 
   src/Circle.cpp 
   src/Rectangle.cpp

@@ -1,9 +1,8 @@
-#include "Rectangle.hpp"
+#include "../include/Rectangle.hpp"
 
-Rectangle::Rectangle(string color, double width, double height):Figure(color), width(width), height(height) {}
+Rectangle::Rectangle(string color, double width, double height)
+    : Figure(color), width(width), height(height) {}
 
-Rectangle::~Rectangle(){}
+Rectangle::~Rectangle() {}
 
-double Rectangle::getArea() {
-  return this->height * this->width;
-}
+double Rectangle::getArea() { return this->height * this->width; }

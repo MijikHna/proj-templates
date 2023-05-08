@@ -4,10 +4,10 @@ services:
   javascript:
     build:
       context: .
-    image: templates/javascript
+    image: 'templates/javascript'
     container_name: javascript
     restart: on-failure
-    ports:
+    port:
       - "9229:9229"
     volumes:
       - ./source:/app

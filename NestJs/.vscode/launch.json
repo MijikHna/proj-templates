@@ -1,0 +1,70 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch App 1",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/src/main.ts",
+      "preLaunchTask": "tsc: watch - tsconfig.build.json"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch App 2",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/src/main.ts",
+      "runtimeArgs": ["-r", "ts-node/register"]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach App 1",
+      "port": 9229,
+      "restart": true
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach App 2",
+      "port": 9229,
+      "restart": true,
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/*.js"],
+      "skipFiles": ["<node_internals>/**"],
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "!**/node_modules/**"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach Remote (JS)",
+      "port": 9229,
+      "restart": true,
+      "sourceMaps": true,
+      "remoteRoot": "/app",
+      "localRoot": "${workspaceFolder}",
+      "outFiles": ["${workspaceFolder}/dist/*.js", "!**/node_modules/**"],
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Jest Test Debug",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["./node_modules/jest/bin/jest.js", "--runInBand"],
+      "args": ["--runTestsByPath", "--no-coverage", "--", "${relativeFile}"],
+      "env": { "NODE_OPTIONS": "--experimental-vm-modules" },
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

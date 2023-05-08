@@ -1,0 +1,80 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch App(JS)",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/dist/main.js",
+      "sourceMaps": true,
+      "outFiles": ["${workspaceFolder}/dist/*.js"]
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Launch App 2(TS)",
+      "cwd": "${workspaceFolder}",
+      "program": "${workspaceFolder}/src/main.ts",
+      "runtimeArgs": ["-r", "ts-node/register", "--watch"]
+    },
+    {
+      "type": "pwa-node",
+      "request": "attach",
+      "name": "Attach App (JS)",
+      "port": 9229,
+      "restart": true,
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}",
+      "outFiles": ["${workspaceFolder}/dist/*.js", "!**/node_modules/**"],
+      "skipFiles": [ "<node_internals>/**"]
+    },
+    {
+      "type": "pwa-node",
+      "request": "attach",
+      "name": "Attach App (TS)",
+      "port": 9229,
+      "restart": true
+    },
+    {
+      "type": "pwa-node",
+      "request": "attach",
+      "name": "Attach Remote (JS)",
+      "port": 9229,
+      "restart": true,
+      "sourceMaps": true,
+      "cwd": "${workspaceFolder}",
+      "remoteRoot": "/app",
+      "localRoot": "${workspaceFolder}",
+      "outFiles": ["${workspaceFolder}/dist/*.js", "!**/node_modules/**"],
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "type": "pwa-node",
+      "request": "attach",
+      "name": "Attach Remote (TS)",
+      "port": 9229,
+      "restart": true,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/app"
+    },
+    {
+      "type": "pwa-node",
+      "request": "launch",
+      "name": "Jest Test Debug",
+      "cwd": "${workspaceFolder}",
+      "rootPath": "${workspaceFolder}",
+      "runtimeArgs": [
+        "./node_modules/jest/bin/jest.js",
+        "--runInBand"
+      ],
+      "args": [ "--runTestsByPath", "--no-coverage", "-t", "${result}", "--", "${relativeFile}" ],
+      "env": { "NODE_OPTIONS": "--experimental-vm-modules" },
+      "sourceMaps": true,
+      "skipFiles": ["<node_internals>/**" ],
+      "port": 9229,
+      "console": "integratedTerminal",
+      "disableOptimisticBPs": true
+    }
+  ]
+}
