@@ -11,7 +11,7 @@ Checklist if also nvim debugger properly set:
 - [x] Nest.Js in Docker
 - [x] Jest
 - [x] Python
-- [ ] Python In Docker 
+- [x] Python In Docker 
 - [ ] Java
 - [ ] Java In Docker
 - [x] C an C++

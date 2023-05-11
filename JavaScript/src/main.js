@@ -5,7 +5,7 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function main() {
   while (1) {
-          const circle = new Circle('red', 10);
+    const circle = new Circle('red', 10);
     const rect = new Rect('blue', 10, 8);
 
     circle.printColor();

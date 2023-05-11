@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Module",
+      "type": "python",
+      "request": "launch",
+      "module": "main",
+      "justMyCode": true
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Python: Local Attach",
+      "type": "python",
+      "request": "attach",
+      "connect": {
+        "host": "127.0.01",
+        "port": 5678
+      }
+    },
+    {
+      "name": "Python: Remote Attach",
+      "type": "python",
+      "mode": "remote",
+      "cwd": "${workspaceFolder}",
+      "request": "attach",
+      "connect": {
+        "host": "127.0.0.1",
+        "port": 5678
+      },
+      "pathMappings": [
+        {
+          "localRoot": "${workspaceFolder}",
+          "remoteRoot": "/app"
+        }
+      ],
+      "justMyCode": true
+    }
+  ]
+}

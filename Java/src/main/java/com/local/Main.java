@@ -1,13 +1,13 @@
-package com.local; 
+package com.local;
 
 import com.local.figure.Cicrle;
 import com.local.figure.Rect;
 
 public class Main {
   public static void main(String[] args) {
-    Cicrle circle = new Cicrle("red", 8);     
-    Rect rect = new Rect("blue", 10, 7) ;
-    
+    Cicrle circle = new Cicrle("red", 8);
+    Rect rect = new Rect("blue", 10, 7);
+
     circle.printColor();
     System.out.println("Area: " + circle.getArea());
 
@@ -15,4 +15,3 @@ public class Main {
     System.out.println("Area: " + rect.getArea());
   }
 }
-

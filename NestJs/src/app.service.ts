@@ -8,6 +8,10 @@ export class AppService {
       world: 'World',
     };
 
+    if (helloWorld.hello == 'Hello') {
+      console.log('hello')
+    }
+
     return `${helloWorld.hello} ${helloWorld.world}`;
   }
 }

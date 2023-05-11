@@ -6,6 +6,13 @@
       "name": "Current File",
       "request": "launch",
       "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "com.local.Main",
+      "projectName": "java-template"
     }
   ]
 }

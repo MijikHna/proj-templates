@@ -1,20 +1,20 @@
 {
    "name": "js-docker-template",
-   "version": "1.0.0",
-   "description": "",
-   "main": "build/main.js",
-   "scripts": {
-      "build": "tsc",
-      "start": "tsc && node ./build/main.js",
-      "start:debug": "tsc -p . && node --inspect=0.0.0.0:9229 ./build/main.js ",
-      "test": "jest ./test"
-   },
-   "devDependencies": {
-      "@types/jest": "^29.5.1",
-      "jest": "^29.5.0",
-      "typescript": "^5.0.2"
-   },
-   "dependencies": {
-      "ts-node": "^10.9.1"
-   }
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/main.js",
+  "scripts": {
+    "build": "tsc",
+    "start-js": "tsc && node /build/main.js",
+    "start-ts": "node -r ts-node/register src/main.ts",
+    "start-js:debug": "tsc -p . && node --inspect=0.0.0.0:9229 ./build/main.js",
+    "start-ts:debug": "node --watch -r ts-node/register --inspect=0.0.0.0:9229 ./src/main.ts",
+    "test": "jest ./test"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.1",
+    "jest": "^29.5.0",
+    "typescript": "^5.0.2",
+    "ts-node": "^10.9.1"
+  }
 }
